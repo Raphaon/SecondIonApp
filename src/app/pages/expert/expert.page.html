@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>
+        Ionic Blank
+      </ion-title>
+          <ion-buttons slot="start">
+            <ion-menu-button  color="light"></ion-menu-button>
+          </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content class="ion-padding">
+    <ion-list>
+        <ion-item (click)="testClick()" *ngFor="let expert of myexperts" >
+            <ion-thumbnail slot="start">
+              <img src="{{expert.picture}}" style="border-radius:40px;">
+            </ion-thumbnail>
+            <ion-label>
+              <h2>{{expert.nom}} {{ expert.prenom}}</h2>
+              <p>Icon on right</p>
+            </ion-label>
+            <span>
+                <ion-icon name="star-half" *ngIf="expert.moyNote()<1"></ion-icon>
+                <ion-icon name="star" color="warning" *ngIf="expert.moyNote()>=1" ></ion-icon>
+               
+            </span>
+            
+          </ion-item>
+    </ion-list>
+</ion-content>
